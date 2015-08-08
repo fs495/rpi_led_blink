@@ -56,7 +56,6 @@ int main(int argc, char *argv[])
 
     gpio_select_func(PIN, GPFSEL_OUTPUT);
     for(;;) {
-	volatile uint32_t *reg;
 	*IOPREGI(gpio_base, GPSET0, PIN / 32) |= 1 << (PIN % 32);
 	*IOPREGI(gpio_base, GPCLR0, PIN / 32) |= 1 << (PIN % 32);
     }
